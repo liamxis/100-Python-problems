@@ -8,7 +8,8 @@ list =[]
 for i in range(1,5):
     for j in range(1,5):
         for k in range(1,5):
-            list.append(100*i+10*j+k)
+            if i!=j and i!=k and j !=k:
+                list.append(100*i+10*j+k)
 print('总共有'+str(len(list))+'个不同的数')
 print('分别是：',end='')
 print(list)
