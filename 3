@@ -1,0 +1,31 @@
+题目：一个整数，它加上100后是一个完全平方数，再加上168又是一个完全平方数，请问该数是多少？
+
+程序分析：
+
+假设该数为 x
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import math
+#因为加100是一个数的平方，所以必然不是负数
+i = -100 
+# a = math.sqrt((i + 100))
+# b = math.sqrt((i + 100 + 168))
+# print(a)
+# print(b)
+#网上都是在10万以内循环，不明白为什么
+while i<10e5:
+    a = math.sqrt((i + 100))
+    b = math.sqrt((i + 100 + 168))
+    # print(a)
+    # print(b)
+#     sa = str(a).split('.')
+#     sb = str(b).split('.')
+#     # print(sa,sb)
+    if str(a)[-1] == '0' and str(b)[-1] == '0':
+        print(i)
+        i+=1
+        # break
+    else:
+        i += 1
